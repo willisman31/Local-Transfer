@@ -18,7 +18,7 @@ Clone and download the project to target device; download dependencies before ru
 
 ## Usage
 
-Run app.js with node from PowerShell terminal.  
+By default, you must create a new directory called "received" in the same location as app.js; you can also changed the file upload target location.  Run app.js with node from PowerShell terminal ```node app.js```.
 
 ### How to Change where Files are Uploaded
 
