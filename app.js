@@ -1,8 +1,11 @@
 const http = require('http');
 const formidable = require('formidable');
 const fs = require('fs');
+const express = require('express');
+const path = require('path');
 
 const port = 3000;
+const app = express();
 let filePath = "./received/"
 
 const server = http.createServer((req, res) => {
@@ -19,15 +22,15 @@ const server = http.createServer((req, res) => {
           });
      });
       } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
-        res.write('<input type="file" name="filetoupload"><br>');
-        res.write('<input type="submit">');
-        res.write('</form>');
-        return res.end();
+	      	fs.readFile('./index.html', function (err, html) {
+        		res.writeHead(200, {'Content-Type': 'text/html'});
+        		res.write(html);
+			return res.end();
+		});
       }
 });
 
 server.listen(port, () => {
-  console.log(`Server running at on {port}`);
+  console.log(`Server running on ${port}`);
 });
+
