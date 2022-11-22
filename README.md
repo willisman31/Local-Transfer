@@ -8,6 +8,8 @@ Basic lightweight web server that accepts file uploads; files can only be transf
 
 Clone and download the project to target device; download dependencies before running.
 
+Setup can be performed by setup scripts on certain clients; setup.sh is for Debian-based clients.
+
 ### Dependencies
 
 - [Node](https://nodejs.org/en/download/)
@@ -27,3 +29,4 @@ Change the filepath variable in app.js to the location of your choice.
 ### How to change port
 
 Modify the port variable in app.js
+
