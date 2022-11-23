@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir received
+mkdir ../received
 apt install nodejs
 npm install express
 npm install fs
