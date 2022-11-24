@@ -16,16 +16,18 @@ const server = http.createServer((req, res) => {
           const newpath = filePath + files.filetoupload.originalFilename;
           fs.rename(oldpath, newpath, function (err) {
             if (err) throw err;
-            res.write('<html><h1>File uploaded</h1><p><a href="../">Send another file</a></p></html>');
-            res.write('')
-            res.end();
+	    fs.readFile('./uploadSuccessful.html', function(err, html) {
+            	res.writeHead(200, {'Content-Type': 'text/html'});
+		res.write(html)
+            	res.end();
+	    });
           });
      });
       } else {
 	      	fs.readFile('./index.html', function (err, html) {
         		res.writeHead(200, {'Content-Type': 'text/html'});
         		res.write(html);
-			return res.end();
+			res.end();
 		});
       }
 });
