@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Local-Transfer",
+	"version": "1.0",
+	"description": "Share files and web pages between devices on local network",
+	"icons": {
+		"48": "icons/placeholder"
+	},
+	"permissions": [
+		"activeTab"
+	],
+	"content_scripts": [
+		{
+			"matches": [],
+			"js": []
+		}
+	],
+	"homepage_url": "placeholder.com",
+	"browser_action": {
+		"default_icon": "icon",
+		"default_title": "Local-Transfer",
+		"default_popup": "popup placeholder"
+	},
+	"web_accessible_resources": [
+		"shared/links.txt"
+	]
+}
+
